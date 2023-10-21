@@ -1,0 +1,32 @@
+body {
+    background-color: #f5f3f1;
+}
+p.error {
+    display: none;
+  }
+  .show-error {
+    display: block;
+  }
+  .show-loader {
+    display: block;
+  }
+  .is-hidden {
+    visibility: hidden;
+  }
+.cat-info {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    gap: 20px;
+
+}
+.text-desc {
+    font-weight: bold;
+}
+.breed-select {
+    padding: 8px 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+   background-color: #E8E3DF;
+   font-weight: bold;
+}
