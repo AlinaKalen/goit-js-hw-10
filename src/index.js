@@ -9,8 +9,12 @@ const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
 const catInfo = document.querySelector('.cat-info');
 
+
 error.classList.add('is-hidden');
 loader.classList.add('is-hidden');
+
+
+
 
 function initializeSlimSelect() {
   new SlimSelect('.breed-select');
@@ -56,12 +60,14 @@ function updateCatInfo(data) {
   `;
 
   catInfo.innerHTML = catInfoHTML;
+  
 }
 
 function fetchBreedsAndSetPetsList() {
-  showLoader();
   hideCatInfo();
   hideError();
+  breedSelect.classList.add('is-hidden'); 
+  loader.classList.remove('is-hidden');
 
   fetchBreeds()
     .then(result => {
@@ -72,7 +78,8 @@ function fetchBreedsAndSetPetsList() {
       displayError('Oops! Something went wrong while fetching breeds. Try reloading the page!');
     })
     .finally(() => {
-      hideLoader();
+      breedSelect.classList.remove('is-hidden'); 
+      loader.classList.add('is-hidden');
     });
 }
 
@@ -102,3 +109,11 @@ function hideError() {
 
 fetchBreedsAndSetPetsList();
 breedSelect.addEventListener('change', onSelect);
+
+
+
+
+
+
+
+
